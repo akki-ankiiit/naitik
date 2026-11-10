@@ -1,8 +1,10 @@
-import FlowerVideo from "../media/FlowerVideo";
-/** Migrated reference markup. Interactions are managed by useSiteExperience. */
+import { imgProps } from "../../data/media";
+import { studio } from "../../data/studio";
+
+/** Naitik Parekh profile. Interactions are managed by useSiteExperience. */
 export default function Architecture() {
   return (
-    <section className="section clip">
+    <section className="section clip" aria-label="Naitik Parekh, Principal Architect">
       <div className="container">
         <div data-video-playpause="" className="arch-scroll-area">
           <div className="arch-intro-s b-desk">
@@ -11,12 +13,6 @@ export default function Architecture() {
               <div className="arch-intro-s_bg_r">
                 <div className="w-embed" />
               </div>
-              <div className="flower arch-intro-l">
-                <FlowerVideo variant="05" />
-              </div>
-              <div className="flower arch-intro-r">
-                <FlowerVideo variant="07" />
-              </div>
             </div>
           </div>
           <div className="arch-w theme_on-color">
@@ -24,12 +20,14 @@ export default function Architecture() {
               <div className="arch-s_t">
                 <div className="u-48" />
                 <h2 data-text="h" data-fit-text="" className="h1 a-center">
-                  Our craft
+                  Naitik Parekh
                 </h2>
                 <div className="u-32" />
                 <div className="grid">
                   <div className="arch-s_desc">
-                    <p data-text="p" className="l1 a-center" />
+                    <p data-text="p" className="l1 a-center">
+                      {studio.principalTitle} · {studio.disciplines.join(" | ")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -38,18 +36,18 @@ export default function Architecture() {
                   <div className="arch-s_quote w-clearfix">
                     <div className="red-line" />
                     <h3 data-part="p" className="h5">
-                      We bring a contemporary eye to Indian craftsmanship,
-                      creating a quiet dialogue between tradition, texture and
-                      modern life
+                      Founder and Principal Architect of M.A.D. Collaboratives,
+                      Naitik brings a perspective shaped by an international
+                      design education and practice in Bangalore and Singapore.
                     </h3>
                     <div className="u-64" />
                     <div className="grid _4-columns">
                       <div className="arch-s_author">
                         <div data-part="p" className="l1">
-                          Designed with intention
+                          City Planner | Architect | Interior Designer
                         </div>
                         <div data-part="p" className="l1 reg">
-                          Crafted in collaboration
+                          Background via Sylph Creatives, Sep 2026
                         </div>
                       </div>
                     </div>
@@ -57,7 +55,6 @@ export default function Architecture() {
                   </div>
                   <div data-part="ctn" className="arch-s_btn b-desk">
                     <div
-                      data-modal-cta-btn="book-a-call"
                       data-magnetic-btn=""
                       hover-nav-item-trigger=""
                       hover-btn-circle=""
@@ -66,19 +63,19 @@ export default function Architecture() {
                       <div data-magnetic-inner="" className="btn-circle_label">
                         <a
                           hover-nav-item=""
-                          aria-label="Discuss your space"
-                          href="#"
+                          aria-label="About the studio"
+                          href="/about"
                           className="nav-item w-inline-block"
                         >
                           <div className="nav-item_label">
                             <div className="nav-item_label_text">
                               <div hover="text" className="l1">
-                                Discuss your space
+                                About the studio
                               </div>
                             </div>
                             <div className="nav-item_label_text is-2">
                               <div hover="text" className="l1">
-                                Discuss your space
+                                About the studio
                               </div>
                             </div>
                           </div>
@@ -123,8 +120,8 @@ export default function Architecture() {
                         </svg>
                       </div>
                       <a
-                        aria-label="Discuss your space"
-                        href="#"
+                        aria-label="About the studio"
+                        href="/about"
                         className="btn-circle_link w-inline-block"
                       />
                     </div>
@@ -137,10 +134,11 @@ export default function Architecture() {
               <div data-desk="off" data-parallax="w" className="img-w">
                 <img
                   className="img"
-                  src="/assets/interiors/courtyard.webp"
-                  alt="Airy living space opening onto a landscaped courtyard"
+                  {...imgProps("DdHWUl2TNsn-00")}
+                  alt="Naitik Parekh, Principal Architect of M.A.D. Collaboratives, leaning against warm timber joinery"
+                  style={{ objectPosition: "50% 22%" }}
                   data-parallax="img"
-                  loading="eager"
+                  loading="lazy"
                 />
                 <div className="img-over-grad bot _100vh" />
                 <div className="img-over-grad bot _100vh" />

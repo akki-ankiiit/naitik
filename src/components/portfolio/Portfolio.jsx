@@ -1,18 +1,8 @@
-import { projects, projectTypes } from "../../data/projects";
+import { projects } from "../../data/projects";
+import { archive, studio } from "../../data/studio";
 import ProjectCard from "./ProjectCard";
-import ProjectFilter from "./ProjectFilter";
-import FlowerVideo from "../media/FlowerVideo";
+
 export default function Portfolio() {
-  const cities = [
-    {
-      value: "*",
-      label: "All cities",
-    },
-    ...[...new Set(projects.map((project) => project.city))].map((city) => ({
-      value: city.toLowerCase(),
-      label: city,
-    })),
-  ];
   return (
     <section data-bg="light" className="section clip">
       <div className="container">
@@ -21,89 +11,60 @@ export default function Portfolio() {
             <div className="u-48" />
             <div className="u-272" />
             <div className="grid">
-              <div data-sort="" data-filter="" className="apart-s_cms">
+              <div className="apart-s_cms">
                 <div className="apart-s_title">
                   <h1 data-scroll-reveal="h" className="h1">
-                    Our projects
+                    Selected spaces
                   </h1>
-                  <div data-filter-count="" className="h1 b-desk">
-                    {projects.length}
-                  </div>
+                  <div className="h1 b-desk">{String(projects.length).padStart(2, "0")}</div>
                 </div>
                 <div className="u-24" />
                 <p className="p1 portfolio-intro">
-                  A collection of design studies exploring the many ways we
-                  live. Rooted in place, shaped around people.
+                  Residential interiors by M.A.D. Collaboratives, as published by the
+                  studio and in Sylph Creatives’ Residence Issue. Designed with
+                  restraint, layered with warmth.
                 </p>
-                <div className="u-32" />
-                <div className="apart-s_cms_filter">
-                  <div className="apart-s_cms_filter_c">
-                    <div className="grid _9-columns">
-                      <ProjectFilter
-                        label="Spaces"
-                        group="type"
-                        options={projectTypes}
-                      />
-                      <ProjectFilter
-                        label="Location"
-                        group="city"
-                        options={cities}
-                      />
-                      <ProjectFilter
-                        label="Sort"
-                        sorting
-                        options={[
-                          {
-                            value: "relevant",
-                            label: "Selected",
-                          },
-                          {
-                            value: "area",
-                            label: "Area: low to high",
-                          },
-                          {
-                            value: "area",
-                            order: "desc",
-                            label: "Area: high to low",
-                          },
-                        ]}
-                      />
-                    </div>
-                  </div>
-                  <button
-                    type="button"
-                    data-reset=""
-                    className="studio-reset l2"
-                  >
-                    Reset
-                  </button>
-                </div>
-                <div className="u-16" />
+                <div className="u-64" />
                 <div data-scroll-reveal="ctn" className="apart-cms">
-                  <div
-                    data-sort-list=""
-                    data-filter-list=""
-                    role="list"
-                    className="apart-cms_list"
-                  >
+                  <div role="list" className="apart-cms_list">
                     {projects.map((project) => (
                       <ProjectCard key={project.slug} project={project} />
                     ))}
                   </div>
                 </div>
-                <div data-filter-empty="" className="portfolio-empty">
-                  <h2 className="h4">Room for something new.</h2>
-                  <p className="p1">
-                    No studies match these filters. Reset to explore the full
-                    collection.
-                  </p>
+                <div className="u-160" />
+                <div className="mad-archive">
+                  <div className="mad-archive_head">
+                    <p className="l2">Archive</p>
+                    <div className="u-16" />
+                    <h2 data-scroll-reveal="h" className="h2">
+                      More from the studio
+                    </h2>
+                    <div className="u-24" />
+                    <p className="p1">
+                      Bodies of work collected on the studio’s Instagram. Full project
+                      pages will follow.
+                    </p>
+                  </div>
+                  <ul className="mad-archive_list" role="list">
+                    {archive.map((name) => (
+                      <li key={name} data-scroll-reveal="p">
+                        <a
+                          className="h4"
+                          href={studio.instagram.studio.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {name}
+                          <span className="l2 reg">On Instagram ↗</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <div className="u-160" />
               </div>
             </div>
-          </div>
-          <div className="flower apart">
-            <FlowerVideo variant="05" />
           </div>
         </div>
       </div>

@@ -45,12 +45,13 @@ select {
   z-index: 10000;
   display: grid;
   place-items: center;
-  background: #17233b;
-  color: #f3f3ec;
-  text-align: center;
-  font-family: ambroise-francois-std, "Times New Roman", serif;
-  font-size: clamp(48px, 6vw, 96px);
-  line-height: 0.9;
+  background: #1e1c1a;
+  color: #f1ede6;
+}
+.route-loading_mark {
+  display: block;
+  width: 56px;
+  height: 56px;
 }
 .not-found {
   min-height: 100svh;
@@ -61,7 +62,7 @@ select {
   gap: 40px;
   text-align: center;
   padding: 32px;
-  background: #b5cedb;
+  background: #d9d1c4;
 }
 .form-status {
   margin-top: 20px;

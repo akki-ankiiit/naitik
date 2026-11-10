@@ -1,5 +1,8 @@
-/** Migrated reference markup. Interactions are managed by useSiteExperience. */
+import { useLocation } from "react-router-dom";
+
+/** Inner-page navigation. Interactions are managed by useSiteExperience. */
 export default function Navigation() {
+  const { pathname } = useLocation();
   return (
     <div data-theme="" className="header-nav">
       <div className="header-nav_list f-mob">
@@ -118,6 +121,22 @@ export default function Navigation() {
         </a>
         <div className="u-24" />
         <a
+          hover-nav-item-l2=""
+          aria-label="About"
+          href="/about"
+          className="nav-item w-inline-block"
+        >
+          <div className="nav-item_label">
+            <div hover="text" className="nav-item_label_text">
+              <div className="l2">About</div>
+            </div>
+            <div hover="text" className="nav-item_label_text is-2">
+              <div className="l2">About</div>
+            </div>
+          </div>
+        </a>
+        <div className="u-4" />
+        <a
           data-modal-cta-btn="book-a-call"
           aria-label="Let\u2019s talk"
           hover-nav-item-l2=""
@@ -138,8 +157,8 @@ export default function Navigation() {
           hover-nav-item-l2=""
           aria-label="Contact"
           href="/contact"
-          aria-current="page"
-          className="nav-item w-inline-block w--current"
+          aria-current={pathname === "/contact" ? "page" : undefined}
+          className={`nav-item w-inline-block${pathname === "/contact" ? " w--current" : ""}`}
         >
           <div className="nav-item_label">
             <div hover="text" className="nav-item_label_text">

@@ -1,5 +1,7 @@
 import { useCallback } from "react";
 
+const DM = "Please send a direct message to @m.a.d_collaboratives on Instagram.";
+
 /** Use a configured enquiry endpoint; never claim an enquiry was sent without one. */
 export function useContactForm() {
   return useCallback(async (event) => {
@@ -17,8 +19,7 @@ export function useContactForm() {
       form.appendChild(status);
     }
     if (!endpoint) {
-      status.textContent =
-        "Online enquiries are not connected yet. Please call +34 (655) 408-648 to speak with the sales team.";
+      status.textContent = `Online enquiries are not connected yet, so nothing has been sent. ${DM}`;
       labels.forEach((label) => {
         label.textContent = "Submit";
       });
@@ -45,8 +46,7 @@ export function useContactForm() {
         success.focus();
       } else status.textContent = "Thank you. Your enquiry has been sent.";
     } catch {
-      status.textContent =
-        "Your enquiry could not be sent. Please try again or call +34 (655) 408-648.";
+      status.textContent = `Your enquiry could not be sent. Please try again later. ${DM}`;
     } finally {
       delete form.dataset.sending;
       labels.forEach((label) => {

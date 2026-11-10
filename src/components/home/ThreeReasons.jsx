@@ -1,3 +1,4 @@
+import { imgProps } from "../../data/media";
 /** Migrated reference markup. Interactions are managed by useSiteExperience. */
 export default function ThreeReasons() {
   return (
@@ -11,11 +12,227 @@ export default function ThreeReasons() {
           <div className="benefits-s">
             <div className="grid fill">
               <div data-slider="" className="benefits-s_cms">
+                <div className="benefits-cms w-dyn-list">
+                  <div role="list" className="benefits-cms_list w-dyn-items">
+                    <div
+                      data-reveal-first=""
+                      data-slider="slide"
+                      role="listitem"
+                      className="benefits-cms_list_item w-dyn-item"
+                    >
+                      <div className="benefit-slide">
+                        <div className="benefit-slide_t">
+                          <div className="u-48 b-desk" />
+                          <div className="u-272 b-mob" />
+                          <h3
+                            data-scroll-reveal="h"
+                            data-slider="h"
+                            className="h1 a-center b-desk"
+                          >
+                            Composed, not decorated
+                          </h3>
+                          <div
+                            data-scroll-reveal="h"
+                            data-slider="h"
+                            className="h2 a-center b-mob"
+                          >
+                            Composed, not decorated
+                          </div>
+                          <div className="u-48" />
+                        </div>
+                        <div className="benefit-slide_c">
+                          <div className="u-16" />
+                          <div className="benefit-slide_img">
+                            <div
+                              data-scroll-reveal="slide"
+                              data-slider="img"
+                              className="img-w"
+                            >
+                              <img
+                                {...imgProps("DdTVjZYzpDC-00-corner", "(max-width: 991px) 70vw, 30vw")}
+                                loading="eager"
+                                className="img"
+                              />
+                            </div>
+                          </div>
+                          <div className="u-16" />
+                        </div>
+                        <div className="benefit-slide_b">
+                          <div className="u-48" />
+                          <div className="grid _8-columns">
+                            <div className="benefit-slide_desc">
+                              <p
+                                data-scroll-reveal="p"
+                                data-slider="p"
+                                className="p1 a-center"
+                              >
+                                Designed with a restrained palette and elevated materiality. Proportion, texture and light are composed so that every corner invites you to pause.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="u-48" />
+                          <div className="grid _8-columns">
+                            <div className="benefit-slide_cap">
+                              <p
+                                data-scroll-reveal="p"
+                                data-slider="p"
+                                className="l1 a-center"
+                              >
+                                Boutique design. Bespoke living.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="u-48" />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-reveal-first=""
+                      data-slider="slide"
+                      role="listitem"
+                      className="benefits-cms_list_item w-dyn-item"
+                    >
+                      <div className="benefit-slide">
+                        <div className="benefit-slide_t">
+                          <div className="u-48 b-desk" />
+                          <div className="u-272 b-mob" />
+                          <h3
+                            data-scroll-reveal="h"
+                            data-slider="h"
+                            className="h1 a-center b-desk"
+                          >
+                            Light, air, landscape
+                          </h3>
+                          <div
+                            data-scroll-reveal="h"
+                            data-slider="h"
+                            className="h2 a-center b-mob"
+                          >
+                            Light, air, landscape
+                          </div>
+                          <div className="u-48" />
+                        </div>
+                        <div className="benefit-slide_c">
+                          <div className="u-16" />
+                          <div className="benefit-slide_img">
+                            <div
+                              data-scroll-reveal="slide"
+                              data-slider="img"
+                              className="img-w"
+                            >
+                              <img
+                                {...imgProps("DdTVeuiTnjm-00-living", "(max-width: 991px) 70vw, 30vw")}
+                                loading="eager"
+                                className="img"
+                              />
+                            </div>
+                          </div>
+                          <div className="u-16" />
+                        </div>
+                        <div className="benefit-slide_b">
+                          <div className="u-48" />
+                          <div className="grid _8-columns">
+                            <div className="benefit-slide_desc">
+                              <p
+                                data-scroll-reveal="p"
+                                data-slider="p"
+                                className="p1 a-center"
+                              >
+                                Natural light and air are never an afterthought. Interior and outdoor spaces are brought into conversation from the earliest stages of a project.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="u-48" />
+                          <div className="grid _8-columns">
+                            <div className="benefit-slide_cap">
+                              <p
+                                data-scroll-reveal="p"
+                                data-slider="p"
+                                className="l1 a-center"
+                              >
+                                Boutique design. Bespoke living.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="u-48" />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-reveal-first=""
+                      data-slider="slide"
+                      role="listitem"
+                      className="benefits-cms_list_item w-dyn-item"
+                    >
+                      <div className="benefit-slide">
+                        <div className="benefit-slide_t">
+                          <div className="u-48 b-desk" />
+                          <div className="u-272 b-mob" />
+                          <h3
+                            data-scroll-reveal="h"
+                            data-slider="h"
+                            className="h1 a-center b-desk"
+                          >
+                            Every layer, aligned
+                          </h3>
+                          <div
+                            data-scroll-reveal="h"
+                            data-slider="h"
+                            className="h2 a-center b-mob"
+                          >
+                            Every layer, aligned
+                          </div>
+                          <div className="u-48" />
+                        </div>
+                        <div className="benefit-slide_c">
+                          <div className="u-16" />
+                          <div className="benefit-slide_img">
+                            <div
+                              data-scroll-reveal="slide"
+                              data-slider="img"
+                              className="img-w"
+                            >
+                              <img
+                                {...imgProps("DdTVeuiTnjm-00-bar", "(max-width: 991px) 70vw, 30vw")}
+                                loading="eager"
+                                className="img"
+                              />
+                            </div>
+                          </div>
+                          <div className="u-16" />
+                        </div>
+                        <div className="benefit-slide_b">
+                          <div className="u-48" />
+                          <div className="grid _8-columns">
+                            <div className="benefit-slide_desc">
+                              <p
+                                data-scroll-reveal="p"
+                                data-slider="p"
+                                className="p1 a-center"
+                              >
+                                Architecture and spatial planning meet furniture, lighting, materials and the smallest details, resolved together until a home reads as one complete experience.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="u-48" />
+                          <div className="grid _8-columns">
+                            <div className="benefit-slide_cap">
+                              <p
+                                data-scroll-reveal="p"
+                                data-slider="p"
+                                className="l1 a-center"
+                              >
+                                Boutique design. Bespoke living.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="u-48" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="benefits-s_cms_pag">
-                  <div className="u-48" />
-                  <div className="u-16" />
-                  <div className="benefit-slide_img" />
-                  <div className="u-16" />
                   <div
                     data-scroll-reveal="ctn"
                     data-slider="pag"
@@ -70,239 +287,6 @@ export default function ThreeReasons() {
                               fill="currentColor"
                             />
                           </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="benefits-cms w-dyn-list">
-                  <div role="list" className="benefits-cms_list w-dyn-items">
-                    <div
-                      data-reveal-first=""
-                      data-slider="slide"
-                      role="listitem"
-                      className="benefits-cms_list_item w-dyn-item"
-                    >
-                      <div className="benefit-slide">
-                        <div className="benefit-slide_t">
-                          <div className="u-48 b-desk" />
-                          <div className="u-272 b-mob" />
-                          <h3
-                            data-scroll-reveal="h"
-                            data-slider="h"
-                            className="h1 a-center b-desk"
-                          >
-                            A sense of belonging
-                          </h3>
-                          <div
-                            data-scroll-reveal="h"
-                            data-slider="h"
-                            className="h2 a-center b-mob"
-                          >
-                            A sense of belonging
-                          </div>
-                          <div className="u-48" />
-                        </div>
-                        <div className="benefit-slide_c">
-                          <div className="u-16" />
-                          <div className="benefit-slide_img">
-                            <div
-                              data-scroll-reveal="slide"
-                              data-slider="img"
-                              className="img-w"
-                            >
-                              <img
-                                src="/assets/interiors/living.webp"
-                                loading="eager"
-                                alt="Contemporary living space with carefully layered materials"
-                                className="img"
-                              />
-                            </div>
-                          </div>
-                          <div className="u-16" />
-                        </div>
-                        <div className="benefit-slide_b">
-                          <div className="u-48" />
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_desc">
-                              <p
-                                data-scroll-reveal="p"
-                                data-slider="p"
-                                className="p1 a-center"
-                              >
-                                We begin with the way you live. Your morning
-                                rituals, the people you gather, the objects you
-                                treasure — each becomes a starting point for a
-                                home that feels unmistakably yours.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="u-48" />
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_cap">
-                              <p
-                                data-scroll-reveal="p"
-                                data-slider="p"
-                                className="l1 a-center"
-                              >
-                                Thoughtfully designed. Beautifully lived in.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="u-48" />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      data-reveal-first=""
-                      data-slider="slide"
-                      role="listitem"
-                      className="benefits-cms_list_item w-dyn-item"
-                    >
-                      <div className="benefit-slide">
-                        <div className="benefit-slide_t">
-                          <div className="u-48 b-desk" />
-                          <div className="u-272 b-mob" />
-                          <h3
-                            data-scroll-reveal="h"
-                            data-slider="h"
-                            className="h1 a-center b-desk"
-                          >
-                            Made to endure
-                          </h3>
-                          <div
-                            data-scroll-reveal="h"
-                            data-slider="h"
-                            className="h2 a-center b-mob"
-                          >
-                            Made to endure
-                          </div>
-                          <div className="u-48" />
-                        </div>
-                        <div className="benefit-slide_c">
-                          <div className="u-16" />
-                          <div className="benefit-slide_img">
-                            <div
-                              data-scroll-reveal="slide"
-                              data-slider="img"
-                              className="img-w"
-                            >
-                              <img
-                                src="/assets/interiors/detail.webp"
-                                loading="eager"
-                                alt="Tactile interior details and handcrafted furniture"
-                                className="img"
-                              />
-                            </div>
-                          </div>
-                          <div className="u-16" />
-                        </div>
-                        <div className="benefit-slide_b">
-                          <div className="u-48" />
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_desc">
-                              <p
-                                data-scroll-reveal="p"
-                                data-slider="p"
-                                className="p1 a-center"
-                              >
-                                Natural stone, honest timber and beautifully
-                                resolved details. We work with a considered
-                                material palette and skilled Indian makers to
-                                create interiors that grow more beautiful with
-                                time.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="u-48" />
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_cap">
-                              <p
-                                data-scroll-reveal="p"
-                                data-slider="p"
-                                className="l1 a-center"
-                              >
-                                Thoughtfully designed. Beautifully lived in.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="u-48" />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      data-reveal-first=""
-                      data-slider="slide"
-                      role="listitem"
-                      className="benefits-cms_list_item w-dyn-item"
-                    >
-                      <div className="benefit-slide">
-                        <div className="benefit-slide_t">
-                          <div className="u-48 b-desk" />
-                          <div className="u-272 b-mob" />
-                          <h3
-                            data-scroll-reveal="h"
-                            data-slider="h"
-                            className="h1 a-center b-desk"
-                          >
-                            Deeply personal
-                          </h3>
-                          <div
-                            data-scroll-reveal="h"
-                            data-slider="h"
-                            className="h2 a-center b-mob"
-                          >
-                            Deeply personal
-                          </div>
-                          <div className="u-48" />
-                        </div>
-                        <div className="benefit-slide_c">
-                          <div className="u-16" />
-                          <div className="benefit-slide_img">
-                            <div
-                              data-scroll-reveal="slide"
-                              data-slider="img"
-                              className="img-w"
-                            >
-                              <img
-                                src="/assets/interiors/lounge.webp"
-                                loading="eager"
-                                alt="Quiet lounge with sculptural furniture and a soft material palette"
-                                className="img"
-                              />
-                            </div>
-                          </div>
-                          <div className="u-16" />
-                        </div>
-                        <div className="benefit-slide_b">
-                          <div className="u-48" />
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_desc">
-                              <p
-                                data-scroll-reveal="p"
-                                data-slider="p"
-                                className="p1 a-center"
-                              >
-                                A collaborative studio practice, creating
-                                thoughtful homes and intimate hospitality
-                                spaces. Considered in every detail, personal in
-                                every expression.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="u-48" />
-                          <div className="grid _8-columns">
-                            <div className="benefit-slide_cap">
-                              <p
-                                data-scroll-reveal="p"
-                                data-slider="p"
-                                className="l1 a-center"
-                              >
-                                Thoughtfully designed. Beautifully lived in.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="u-48" />
                         </div>
                       </div>
                     </div>

@@ -1,24 +1,96 @@
-import { image } from './media';
+import { photo } from './media';
 
-// Illustrative design studies, ready to replace with the studio's commissioned work.
-export const projects = [
-  { slug: 'the-malabar-residence', name: 'The Malabar Residence', city: 'Raipur', type: 'homes', category: 'City residence', area: 2400, rooms: '3 BHK', year: '2026', cover: 'hero', palette: 'Limewash · oak · brass', description: 'A quiet retreat above the city. Warm timber, tactile limewash and a gentle palette give this family home its unhurried rhythm.', gallery: ['hero', 'dining', 'bedroom', 'detail'] },
-  { slug: 'the-courtyard-house', name: 'The Courtyard House', city: 'Bengaluru', type: 'villas', category: 'Courtyard villa', area: 4800, rooms: '4 BHK', year: '2026', cover: 'courtyard', palette: 'Stone · teak · linen', description: 'Designed around the everyday pleasure of light and air. A sequence of intimate living spaces meets an open courtyard, bringing nature into the heart of the home.', gallery: ['courtyard', 'villa', 'kitchen', 'lounge'] },
-  { slug: 'a-house-in-alibaug', name: 'A House in Alibaug', city: 'Alibaug', type: 'villas', category: 'Weekend home', area: 5200, rooms: '4 BHK', year: '2025', cover: 'villa', palette: 'Lime plaster · cane · stone', description: 'A coastal home for slow weekends and long conversations. Breezy rooms, earthy surfaces and easy indoor–outdoor living respond to the landscape and the seasons.', gallery: ['villa', 'retreat', 'suite', 'detail'] },
-  { slug: 'the-jaipur-atelier', name: 'The Jaipur Atelier', city: 'Jaipur', type: 'hospitality', category: 'Boutique hospitality', area: 3600, rooms: '6 suites', year: '2026', cover: 'detail', palette: 'Sandstone · brass · cotton', description: 'A contemporary interpretation of Indian craft. Stone, warm metal and tactile textiles bring a sense of place to an intimate guest experience.', gallery: ['detail', 'hospitality', 'suite', 'bath'] },
-  { slug: 'the-pali-hill-home', name: 'The Pali Hill Home', city: 'Raipur', type: 'homes', category: 'City residence', area: 1800, rooms: '3 BHK', year: '2025', cover: 'apartment', palette: 'Oak · travertine · linen', description: 'A compact city home that feels generous. Thoughtful planning, integrated storage and a soft material palette make room for the rituals of family life.', gallery: ['apartment', 'living', 'kitchen', 'bedroom'] },
-  { slug: 'the-verandah-house', name: 'The Verandah House', city: 'Goa', type: 'villas', category: 'Tropical villa', area: 4200, rooms: '4 BHK', year: '2026', cover: 'retreat', palette: 'Timber · limewash · terracotta', description: 'A home that embraces its tropical setting. Shaded edges, handcrafted furniture and a natural palette blur the boundary between room and garden.', gallery: ['retreat', 'courtyard', 'dining', 'suite'] },
-  { slug: 'the-indiranagar-home', name: 'The Indiranagar Home', city: 'Bengaluru', type: 'homes', category: 'City residence', area: 2200, rooms: '3 BHK', year: '2025', cover: 'living', palette: 'Walnut · stone · wool', description: 'An expressive yet restful family home. Beautifully resolved joinery and considered lighting create spaces that adapt from quiet mornings to evenings with friends.', gallery: ['living', 'lounge', 'bedroom', 'bath'] },
-  { slug: 'the-quiet-suite', name: 'The Quiet Suite', city: 'Goa', type: 'hospitality', category: 'Boutique retreat', area: 1600, rooms: '2 suites', year: '2026', cover: 'suite', palette: 'Linen · oak · plaster', description: 'A study in the art of doing less. Natural textures, low lighting and a carefully edited collection of furniture create an intimate place to pause.', gallery: ['suite', 'bath', 'lounge', 'detail'] },
-  { slug: 'the-gulmohar-residence', name: 'The Gulmohar Residence', city: 'Pune', type: 'homes', category: 'Family residence', area: 2800, rooms: '4 BHK', year: '2025', cover: 'dining', palette: 'Teak · marble · handwoven cotton', description: 'A home shaped around gathering. A generous dining space anchors warm, connected rooms, with Indian craft woven into the details rather than added as decoration.', gallery: ['dining', 'hero', 'kitchen', 'craft'] },
-  { slug: 'the-stone-house', name: 'The Stone House', city: 'Jaipur', type: 'villas', category: 'Private villa', area: 6200, rooms: '5 BHK', year: '2026', cover: 'craft', palette: 'Sandstone · walnut · brass', description: 'Grounded in material and proportion. Layered stone, timber and warm metal create a contemporary home with an enduring connection to its setting.', gallery: ['craft', 'villa', 'dining', 'bath'] },
-  { slug: 'the-bandra-table', name: 'The Bandra Table', city: 'Raipur', type: 'hospitality', category: 'Restaurant interior', area: 2100, rooms: '48 covers', year: '2025', cover: 'hospitality', palette: 'Timber · leather · warm metal', description: 'An intimate setting for good food and better conversation. Tactile seating, warm light and carefully considered acoustics create a welcoming neighbourhood address.', gallery: ['hospitality', 'detail', 'dining', 'craft'] },
-  { slug: 'the-river-view-home', name: 'The River View Home', city: 'Pune', type: 'homes', category: 'City residence', area: 3200, rooms: '4 BHK', year: '2026', cover: 'lounge', palette: 'Oak · linen · natural stone', description: 'A home that lets the light lead. Open sightlines and a restrained palette draw attention to the landscape, while bespoke details make every room feel personal.', gallery: ['lounge', 'living', 'bedroom', 'kitchen'] },
-].map((project, index) => ({ ...project, number: String(index + 1).padStart(2, '0'), image: image(project.cover), status: 'Design study' }));
-
-export const projectTypes = [
-  { value: '*', label: 'All projects' },
-  { value: 'homes', label: 'City homes' },
-  { value: 'villas', label: 'Villas & retreats' },
-  { value: 'hospitality', label: 'Hospitality' },
+/**
+ * Spaces published by or about M.A.D. Collaboratives (docs/research/project-inventory.md).
+ * Titles describe what the photographs show; the studio's own project names, locations
+ * and years are not public yet, so `detailsVerified` stays false until confirmed.
+ */
+const list = [
+  {
+    slug: 'living-dining-bar',
+    title: 'Living, Dining & Bar',
+    category: 'Residential interior',
+    location: null,
+    summary: 'A restrained palette and elevated materiality: soft ink-wash walls, veined stone and navy accents, carried from the living room to a mirrored bar niche and a black marble dining table.',
+    notes: [
+      { text: 'We don’t decorate spaces. We compose experiences. Designed with a restrained palette and elevated materiality, this seating area celebrates the beauty of proportion, texture, and light. A home where every corner invites you to pause.', source: 'https://www.instagram.com/p/DbEGd80JFW9/', by: '@m.a.d_collaboratives' },
+      { text: 'Where mornings begin with sunlight and evenings settle into comfort. Designed with restraint, layered with warmth, and finished with timeless elegance.', source: 'https://www.instagram.com/p/DbGTXd8JiZZ/', by: '@m.a.d_collaboratives' },
+    ],
+    cover: 'DbGTXd8JiZZ-00',
+    card: 'DdTVTrgzFru-00-dining',
+    gallery: ['DbGTXd8JiZZ-00', 'DbEGd80JFW9-00', 'DbEGd80JFW9-00-mural', 'DdTVeuiTnjm-00-bar', 'DdTVTrgzFru-00-dining', 'DbGTXd8JiZZ-00-table', 'DdTVjZYzpDC-00-corner'],
+    sources: ['https://www.instagram.com/p/DbEGd80JFW9/', 'https://www.instagram.com/p/DbGTXd8JiZZ/', 'https://www.instagram.com/p/DdTVu4Ak5xq/'],
+    published: 'July & September 2026',
+    groupingNote: 'Grouped by the shared mirrored niche, navy armchairs and marble dining table seen across the photographs.',
+  },
+  {
+    slug: 'gilded-bedroom',
+    title: 'Bedroom with Gilded Relief',
+    category: 'Residential interior',
+    location: null,
+    summary: 'A sculpted ivory wall relief traced in gold rises behind a soft upholstered headboard, layered with velvet, quilting and faux fur.',
+    notes: [
+      { text: 'Arrival, movement, light, air, landscape, water, entertaining, retreat, unwinding: every seemingly ordinary moment is treated as part of the architecture of everyday life.', source: 'https://www.instagram.com/p/DdTVu4Ak5xq/', by: 'Sylph Creatives' },
+    ],
+    cover: 'DdTVvujTxs9-00-bedroom',
+    card: 'DdTVvujTxs9-00-bedroom',
+    gallery: ['DdTVvujTxs9-00-bedroom', 'DdTVvujTxs9-00-relief', 'DdTVvujTxs9-00-headboard'],
+    sources: ['https://www.instagram.com/p/DdTVvujTxs9/'],
+    published: 'September 2026',
+  },
+  {
+    slug: 'four-poster-bedroom',
+    title: 'Bedroom with Glass Four-Poster',
+    category: 'Residential interior',
+    location: null,
+    summary: 'A clear four-poster frame joined in brass keeps the room light, between full-height drapes, warm timber floors and quiet storage walls.',
+    notes: [
+      { text: 'The studio has continued to evolve, but the destination has remained remarkably clear: to become a defining boutique name in high end residential design, recognised for spaces that are refined, layered, experiential and profoundly individual.', source: 'https://www.instagram.com/p/DdTVTrgzFru/', by: 'Sylph Creatives' },
+    ],
+    cover: 'DdTVTrgzFru-00-fourposter',
+    card: 'DdTVTrgzFru-00-fourposter',
+    gallery: ['DdTVTrgzFru-00-fourposter'],
+    sources: ['https://www.instagram.com/p/DdTVTrgzFru/'],
+    published: 'September 2026',
+  },
+  {
+    slug: 'lounge',
+    title: 'Lounge in Stone & Ivory',
+    category: 'Residential interior',
+    location: null,
+    summary: 'Cream upholstery, layered stone tables and a sculptural wall piece, softened by full-height sheers and daylight.',
+    notes: [
+      { text: 'Natural light and air are not afterthoughts. Landscape and water are not decorative punctuation. Indoor and outdoor spaces are deliberately brought into conversation from the earliest stages, allowing the environment to become part of the experience.', source: 'https://www.instagram.com/p/DdTVeuiTnjm/', by: 'Sylph Creatives' },
+    ],
+    cover: 'DdTVeuiTnjm-00-living',
+    card: 'DdTVeuiTnjm-00-living',
+    gallery: ['DdTVeuiTnjm-00-living'],
+    sources: ['https://www.instagram.com/p/DdTVeuiTnjm/'],
+    published: 'September 2026',
+  },
+  {
+    slug: 'washroom-vanity',
+    title: 'Washroom & Powder Vanity',
+    category: 'Residential interior',
+    location: null,
+    summary: 'Travertine-clad walls, fluted dark joinery and black fittings: small rooms given the same material care as the rest of the home.',
+    notes: [
+      { text: 'Just making sure one of the most neglected space[s] are also well designed with thoughtful materials curation.', source: 'https://www.instagram.com/p/DZc4X9PIFWc/', by: '@m.a.d_collaboratives' },
+    ],
+    cover: 'DZc4X9PIFWc-00-vanity',
+    card: 'DZc4X9PIFWc-00-vanity',
+    gallery: ['DZc4X9PIFWc-00-vanity', 'DdTVjZYzpDC-00-vanity'],
+    sources: ['https://www.instagram.com/p/DZc4X9PIFWc/', 'https://www.instagram.com/p/DdTVjZYzpDC/'],
+    published: 'June & September 2026',
+  },
 ];
+
+export const projects = list.map((project, index) => ({
+  ...project,
+  id: `project-${String(index + 1).padStart(3, '0')}`,
+  number: String(index + 1).padStart(2, '0'),
+  coverImage: photo(project.cover).src,
+  sourceUrl: project.sources[0],
+  credits: [...new Set(project.gallery.map(id => photo(id).credit || 'M.A.D. Collaboratives'))],
+  detailsVerified: false,
+}));

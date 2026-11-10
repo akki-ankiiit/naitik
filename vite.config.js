@@ -10,7 +10,6 @@ export default defineConfig({
         manualChunks: {
           "react-vendor": ["react", "react-dom", "react-router-dom"],
           "animation-vendor": ["gsap", "lenis"],
-          "lottie-vendor": ["lottie-web/build/player/lottie_light"],
           "swiper-vendor": ["swiper/bundle"],
         },
       },

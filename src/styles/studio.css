@@ -1,15 +1,35 @@
-/* Interior-studio content, retaining the reference's type scale and motion hooks. */
+/* M.A.D. Collaboratives: brand tokens and studio-specific layouts.
+   Re-themes the reference system by swapping its global colour tokens; component CSS is untouched. */
+:root {
+  /* Ink: warm charcoal from the logo and the studio's lacquered joinery. */
+  --_global-colors---base-1000--100: #1e1c1a;
+  --_global-colors---base-1000--60: #1e1c1a99;
+  --_global-colors---base-1000--30: #1e1c1a4d;
+  --_global-colors---base-1000--10: #1e1c1a1a;
+  --_global-colors---base-1000--5: #1e1c1a0d;
+  --_global-colors---base-1000--0: #1e1c1a00;
+  /* Paper: warm ivory walls. */
+  --_global-colors---base-0--100: #f1ede6;
+  --_global-colors---base-0--60: #f1ede699;
+  --_global-colors---base-0--30: #f1ede64d;
+  --_global-colors---base-0--10: #f1ede61a;
+  --_global-colors---base-0--5: #f1ede60d;
+  --_global-colors---base-0--0: #f1ede600;
+  /* Brand surface: stone and greige upholstery. Dark surface: espresso shadow. Accent: brushed brass. */
+  --_global-colors---brand-500--powder-sky: #d9d1c4;
+  --_global-colors---brand-500--velvet-plum: #2a2521;
+  --_global-colors---brand-500--blush-bloom: #b39062;
+  --mad-brass: #b39062;
+}
 .hero-w_bg_master_img::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(18, 23, 25, .55), rgba(18, 23, 25, .12) 65%, rgba(18, 23, 25, .3));
+  background: linear-gradient(180deg, rgba(20, 18, 16, .5), rgba(20, 18, 16, .08) 55%, rgba(20, 18, 16, .35));
 }
 .hero-w_bg_master_img .hero-img { height: max(100svh, 95vw); object-fit: cover; object-position: center; }
-.hero-w_bg_master_img_night .hero-img { filter: brightness(.43) saturate(.8) sepia(.2); }
-.hero-w_bg_master_img_night::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 70% 58%, #e3a36535, transparent 55%); }
 .loc-w_clouds { opacity: .2; filter: blur(8px); }
 .studio-credit-mark { font-family: var(--_fonts---font-display); font-size: 22px; letter-spacing: -.07em; }
 .studio-breadcrumb { writing-mode: vertical-rl; }
@@ -50,3 +70,110 @@
   .project-related { padding-left: var(--24px); padding-right: var(--24px); }
   .studio-breadcrumb { display: none; }
 }
+
+/* Project gallery: paired portraits, full-width landscapes. */
+.project-gallery { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--16px); }
+.project-gallery-item { grid-column: span 2; margin: 0; }
+.project-gallery-item.is-half { grid-column: span 1; }
+.project-gallery-item figcaption a { flex-shrink: 0; }
+.project-note { margin: 0 0 24px; }
+.project-note footer { margin-top: 12px; }
+
+/* Instagram selection. */
+.mad-social_head { display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; }
+.mad-social_accounts { display: flex; gap: 64px; margin: 0; padding: 0; list-style: none; }
+.mad-social_accounts li { display: flex; flex-direction: column; gap: 8px; }
+.mad-social_grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--16px); margin: 0; padding: 0; list-style: none; }
+.mad-social_grid a { display: flex; flex-direction: column; gap: 12px; color: inherit; text-decoration: none; }
+.mad-social_img { display: block; overflow: hidden; aspect-ratio: 3 / 4; }
+.mad-social_img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mad-social_grid li:nth-child(even) { margin-top: 12%; }
+.mad-social_note { opacity: .6; }
+.mad-social-btn { gap: 8px; }
+
+/* Projects archive index. */
+.mad-archive { display: grid; grid-template-columns: 4fr 6fr; gap: var(--48px); align-items: start; }
+.mad-archive_list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--_colors---base-1000--line); }
+.mad-archive_list a { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--_colors---base-1000--line); color: inherit; text-decoration: none; transition: padding .6s var(--ease-out, ease); }
+.mad-archive_list a:hover { padding-left: 16px; }
+
+/* About. */
+.mad-about_intro_cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--48px); max-width: 1100px; }
+.mad-about_wide .img-w { overflow: hidden; aspect-ratio: 16 / 8; }
+.mad-about_wide img, .mad-about_portrait img, .mad-about_press_cover img { width: 100%; height: 100%; object-fit: cover; }
+.mad-about_person { display: grid; grid-template-columns: 4fr 5fr; gap: 8vw; align-items: start; }
+.mad-about_portrait .img-w { overflow: hidden; aspect-ratio: 3 / 4; margin-bottom: 16px; }
+.mad-about_portrait img { object-position: 50% 20%; }
+.mad-about_bio { padding-top: 6vw; max-width: 620px; }
+.mad-about_quote { margin: 0; padding-left: 24px; border-left: 1px solid var(--mad-brass); }
+.mad-about_approach { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--32px); margin: 0; padding: 0; list-style: none; }
+.mad-about_approach li { display: flex; flex-direction: column; gap: 20px; padding-top: 24px; border-top: 1px solid currentColor; }
+.mad-about_approach a { margin-top: auto; }
+.mad-about_press { display: grid; grid-template-columns: 4fr 6fr; gap: 8vw; align-items: start; }
+.mad-about_press_cover .img-w { overflow: hidden; aspect-ratio: 516 / 640; margin-bottom: 16px; }
+.mad-about_list { margin: 0; padding: 0; list-style: none; }
+.mad-about_list li { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 28px 0; border-top: 1px solid var(--_colors---base-1000--line); }
+.mad-about a { color: inherit; }
+
+/* Enquiry form. */
+.mad-select {
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: center;
+  text-align-last: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--_colors---base-1000--primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%231e1c1a' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--_units---u-16) center;
+  background-size: 11px 7px;
+}
+/* Once a project type is chosen the value replaces the label, so long options never collide with it. */
+.input:has(.mad-select:valid) .input_label { opacity: 0; pointer-events: none; }
+.mad-form-notice { margin-bottom: 16px; max-width: 34em; }
+
+@media (max-width: 991px) {
+  .project-gallery { column-gap: 8px; }
+  .mad-social_head { flex-direction: column; align-items: flex-start; gap: 32px; }
+  .mad-social_accounts { gap: 32px; }
+  .mad-social_grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .mad-archive, .mad-about_intro_cols, .mad-about_person, .mad-about_press { grid-template-columns: 1fr; }
+  .mad-about_bio { padding-top: 0; }
+  .mad-about_wide .img-w { aspect-ratio: 4 / 5; }
+  .mad-about_approach { grid-template-columns: 1fr; gap: 48px; }
+  .mad-about_list li { grid-template-columns: 1fr; gap: 8px; }
+  .mad-footer-handle { font-size: clamp(28px, 8vw, 48px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mad-archive_list a { transition: none; }
+}
+@media (max-width: 991px) {
+  .loc-intro-s_title .h1 { font-size: clamp(56px, 19vw, 120px); }
+  .loc-intro-s_title_line { white-space: nowrap; }
+}
+
+/* Composed, not decorated: slider controls sit below the slide, never over the image. */
+.benefits-s_cms .benefits-cms { flex: 1 1 auto; min-height: 0; height: auto; }
+.benefits-s_cms .benefits-cms_list { height: 100%; }
+.benefits-s_cms_pag { position: relative; inset: auto; flex: none; margin-top: var(--24px); }
+.benefits-s_cms_pag .pag { height: auto; min-height: var(--48px); }
+
+/* Display scale: headings were sized for a larger editorial reference. Reduced for this studio. */
+:root {
+  --_fonts---h1--size: calc(150rem/var(--_special-units---scale-ratio));
+  --_fonts---h2--size: calc(108rem/var(--_special-units---scale-ratio));
+  --_fonts---h3--size: calc(76rem/var(--_special-units---scale-ratio));
+}
+@media (max-width: 991px) {
+  :root {
+    --_fonts---h1--size: calc(96rem/var(--_special-units---scale-ratio));
+    --_fonts---h2--size: calc(72rem/var(--_special-units---scale-ratio));
+    --_fonts---h3--size: calc(56rem/var(--_special-units---scale-ratio));
+  }
+}
+
+/* Enquiry modal: the notice spans the form. */
+.mad-form-notice { width: 100%; max-width: none; margin: var(--24px) 0 0; }

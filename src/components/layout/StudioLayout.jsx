@@ -1,4 +1,4 @@
-import HeaderLogo from "../apartmentspage/HeaderLogo";
+import HeaderLogo from "./HeaderLogo";
 import Navigation from "../contactpage/Navigation";
 import MenuModal from "../contactpage/MenuModal";
 import CallModal from "./CallModal";
@@ -6,8 +6,9 @@ import Footer from "./Footer";
 import SeaViews from "../home/SeaViews";
 export default function StudioLayout({
   children,
-  breadcrumb = "Selected projects",
+  breadcrumb = "Selected spaces",
   showCta = true,
+  ctaImage,
 }) {
   return (
     <main
@@ -23,7 +24,7 @@ export default function StudioLayout({
         </a>
       </div>
       {children}
-      {showCta && <SeaViews />}
+      {showCta && <SeaViews image={ctaImage} />}
       <Footer />
       <CallModal />
       <MenuModal />

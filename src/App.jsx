@@ -5,6 +5,8 @@ import { routes } from "./data/routes";
 import ExperienceShell from "./components/layout/ExperienceShell";
 import { useSiteExperience } from "./hooks/useSiteExperience";
 import { useContactForm } from "./hooks/useContactForm";
+import MadMark from "./components/layout/MadMark";
+import { applyMeta } from "./data/meta";
 
 function PageExperience({ Component }) {
   const root = useRef(null);
@@ -26,11 +28,9 @@ function PageExperience({ Component }) {
 
 function LoadingScreen() {
   return (
-    <div className="route-loading" role="status" aria-label="Loading Azure Interiors">
-      <span>
-        AZURE
-        <br />
-        INTERIORS
+    <div className="route-loading" role="status" aria-label="Loading M.A.D. Collaboratives">
+      <span className="route-loading_mark">
+        <MadMark />
       </span>
     </div>
   );
@@ -39,11 +39,11 @@ function LoadingScreen() {
 function NotFound() {
   return (
     <main className="not-found">
-      <p className="l2">AZURE INTERIORS</p>
+      <p className="l2">M.A.D. Collaboratives</p>
       <h1 className="h2">
-        A space
+        This page
         <br />
-        to call yours.
+        isn’t here.
       </h1>
       <a className="h5" href="/">
         Return home ↗
@@ -64,7 +64,7 @@ export default function App() {
   const [failure, setFailure] = useState(false);
 
   useEffect(() => {
-    document.title = route?.title || "Page not found — Azure Interiors";
+    applyMeta(route);
     transitioning.current = false;
   }, [route]);
 

@@ -1,55 +1,43 @@
-import { photography } from "../../data/media";
+import { imgProps, photo } from "../../data/media";
+
 export default function ProjectCard({ project }) {
+  const credit = photo(project.card).credit;
   return (
-    <div
-      data-filter-item=""
-      data-sort-item=""
-      role="listitem"
-      className="apart-cms_list_item"
-    >
+    <div role="listitem" className="apart-cms_list_item">
       <a
         href={`/projects/${project.slug}`}
         hover-apart-card=""
         hover-img-card=""
-        data-sort-relevant={project.number}
         className="apart-card portfolio-card"
       >
         <div className="apart-card_c">
           <div className="apart-card_t">
-            <p data-type={project.type} className="l2 a-center">
-              {project.category}
-            </p>
+            <p className="l2 a-center">{project.number}</p>
             <div className="u-4" />
-            <p
-              data-city={project.city.toLowerCase()}
-              className="l2 reg a-center"
-            >
-              {project.city}, India
-            </p>
+            <p className="l2 reg a-center">{project.category}</p>
           </div>
           <div className="u-24" />
           <div className="portfolio-card-image">
             <img
               hover="img"
-              src={project.image}
-              alt={photography[project.cover].alt}
+              {...imgProps(project.card, "(max-width: 991px) 90vw, 30vw")}
               loading="lazy"
             />
           </div>
           <div className="u-24" />
           <div className="apart-card_b">
-            <h2 className="h5 a-center portfolio-card-title">{project.name}</h2>
+            <h2 className="h5 a-center portfolio-card-title">{project.title}</h2>
             <div className="u-16" />
             <div className="apart-card_data-list">
-              <span data-sort-area={project.area} className="l2 reg">
-                {project.area.toLocaleString("en-IN")} sq ft
+              <span className="l2 reg">
+                {project.gallery.length} {project.gallery.length === 1 ? "photograph" : "photographs"}
               </span>
               <span className="data-divider" />
-              <span className="l2 reg">{project.year}</span>
+              <span className="l2 reg">{credit ? `Via ${credit}` : "Studio post"}</span>
             </div>
             <div className="u-16" />
             <p className="l2 reg a-center">
-              {project.status} <span aria-hidden="true">↗</span>
+              View the space <span aria-hidden="true">↗</span>
             </p>
           </div>
         </div>

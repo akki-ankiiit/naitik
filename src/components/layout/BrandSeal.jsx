@@ -14,12 +14,12 @@ export default function BrandSeal() {
       </defs>
       <text
         fontFamily="Maison Neue Extended, Arial, sans-serif"
-        fontSize="7.7"
+        fontSize="7.2"
         fontWeight="700"
-        letterSpacing="2.3"
+        letterSpacing="2"
       >
-        <textPath href={`#${id}`} textLength="290" lengthAdjust="spacing">
-          AZURE INTERIORS · INTERIORS · INDIA ·{" "}
+        <textPath href={`#${id}`} textLength="293" lengthAdjust="spacing">
+          M.A.D COLLABORATIVES · MAKE A DIFFERENCE ·{" "}
         </textPath>
       </text>
     </svg>

@@ -129,16 +129,6 @@ table {
   display: block;
 }
 
-@media screen and (orientation: landscape) and (max-width: 991px) and (pointer: coarse) and (hover: none) {
-  .landscape-cover {
-    display: block;
-  }
-
-  body {
-    overflow: hidden;
-  }
-}
-
 .unset-all {
   all: unset;
 }
@@ -707,7 +697,7 @@ html {
   mask-image:
     linear-gradient(white, white), linear-gradient(white, white),
     linear-gradient(white, white),
-    url("/assets/images/6a23fd3e3546e70bdf8420a0_preloader_arch-l.svg");
+    url("/assets/studio/arch-mask.svg");
   mask-size:
     calc(50% - (var(--arch-w) / 2) + 2px) 100%,
     calc(var(--arch-w) + 4px) calc(var(--arch-y) + 2px),

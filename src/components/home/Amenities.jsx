@@ -1,4 +1,14 @@
-/** Migrated reference markup. Interactions are managed by useSiteExperience. */
+import { imgProps } from "../../data/media";
+
+const details = [
+  { key: "relief", title: "Relief", image: "DdTVvujTxs9-00-relief", text: "A sculpted wall relief, its flowing ribbons traced in gold, gives a bedroom its quiet centre of gravity." },
+  { key: "stone", title: "Stone", image: "DbGTXd8JiZZ-00-table", text: "Veined stone, smoked glass and brass: a coffee table styled as carefully as the room around it." },
+  { key: "textiles", title: "Textiles", image: "DdTVvujTxs9-00-headboard", text: "Velvet, quilting and faux fur layered against an upholstered headboard, so softness is felt before it is seen." },
+  { key: "washrooms", title: "Washrooms", image: "DZc4X9PIFWc-00-vanity", text: "Travertine walls, a fluted dark vanity and black fittings. The smallest rooms get the same material care." },
+  { key: "art", title: "Art", image: "DbEGd80JFW9-00-mural", text: "An ink-wash landscape with birds in flight turns a living-room wall into a calm horizon." },
+];
+
+/** Selected details. Interactions are managed by useSiteExperience. */
 export default function Amenities() {
   return (
     <div className="amen-scroll-area">
@@ -14,262 +24,49 @@ export default function Amenities() {
                 >
                   <div className="amen-cms w-dyn-list">
                     <div role="list" className="amen-cms_list w-dyn-items">
-                      <div
-                        data-reveal-first=""
-                        data-tab-content="gated-community"
-                        role="listitem"
-                        className="amen-cms_list_item w-dyn-item"
-                      >
-                        <div data-parallax="w" className="amen-slide">
-                          <div className="amen-slide_b">
-                            <div className="grid">
-                              <div className="amen-slide_title">
-                                <h3
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="l1"
-                                >
-                                  Space planning
-                                </h3>
-                                <div className="u-32" />
+                      {details.map((item) => (
+                        <div
+                          key={item.key}
+                          data-reveal-first=""
+                          data-tab-content={item.key}
+                          role="listitem"
+                          className="amen-cms_list_item w-dyn-item"
+                        >
+                          <div data-parallax="w" className="amen-slide">
+                            <div className="amen-slide_b">
+                              <div className="grid">
+                                <div className="amen-slide_title">
+                                  <h3 data-scroll-reveal="p" data-tab="p" className="l1">
+                                    {item.title}
+                                  </h3>
+                                  <div className="u-32" />
+                                </div>
+                                <div className="amen-slide_desc w-clearfix">
+                                  <div className="red-line" />
+                                  <p data-scroll-reveal="p" data-tab="p" className="h5">
+                                    {item.text}
+                                  </p>
+                                </div>
                               </div>
-                              <div className="amen-slide_desc w-clearfix">
-                                <div className="red-line" />
-                                <h4
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="h5"
-                                >
-                                  The most beautiful rooms are the ones that
-                                  make you feel at ease. We bring together
-                                  light, proportion and the warmth of Indian
-                                  craft to make that feeling last.
-                                </h4>
-                              </div>
+                              <div className="u-48" />
                             </div>
-                            <div className="u-48" />
-                          </div>
-                          <div className="amen-slide_img">
-                            <div data-tab="slide" className="img-w">
-                              <div className="img-w">
-                                <img
-                                  data-parallax="img-in"
-                                  loading="eager"
-                                  alt="Contemporary living space with carefully layered materials"
-                                  src="/assets/interiors/living.webp"
-                                  className="img-p"
-                                />
+                            <div className="amen-slide_img">
+                              <div data-tab="slide" className="img-w">
+                                <div className="img-w">
+                                  <img
+                                    {...imgProps(item.image)}
+                                    data-parallax="img-in"
+                                    loading="lazy"
+                                    className="img-p"
+                                  />
+                                </div>
+                                <div className="img-over-grad from-top" />
+                                <div className="img-over-grad from-bot _4x bot" />
                               </div>
-                              <div className="img-over-grad from-top" />
-                              <div className="img-over-grad from-bot _4x bot" />
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        data-reveal-first=""
-                        data-tab-content="swimming-pool-2"
-                        role="listitem"
-                        className="amen-cms_list_item w-dyn-item"
-                      >
-                        <div data-parallax="w" className="amen-slide">
-                          <div className="amen-slide_b">
-                            <div className="grid">
-                              <div className="amen-slide_title">
-                                <h3
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="l1"
-                                >
-                                  Material stories
-                                </h3>
-                                <div className="u-32" />
-                              </div>
-                              <div className="amen-slide_desc w-clearfix">
-                                <div className="red-line" />
-                                <h4
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="h5"
-                                >
-                                  Natural stone, tactile plaster, honest timber
-                                  and handwoven textiles — materials chosen to
-                                  be felt, not just seen.
-                                </h4>
-                              </div>
-                            </div>
-                            <div className="u-48" />
-                          </div>
-                          <div className="amen-slide_img">
-                            <div data-tab="slide" className="img-w">
-                              <div className="img-w">
-                                <img
-                                  data-parallax="img-in"
-                                  loading="eager"
-                                  alt="Hand-finished interior textures in a considered living space"
-                                  src="/assets/interiors/craft.webp"
-                                  className="img-p"
-                                />
-                              </div>
-                              <div className="img-over-grad from-top" />
-                              <div className="img-over-grad from-bot _4x bot" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        data-reveal-first=""
-                        data-tab-content="swimming-pool"
-                        role="listitem"
-                        className="amen-cms_list_item w-dyn-item"
-                      >
-                        <div data-parallax="w" className="amen-slide">
-                          <div className="amen-slide_b">
-                            <div className="grid">
-                              <div className="amen-slide_title">
-                                <h3
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="l1"
-                                >
-                                  Bespoke furniture
-                                </h3>
-                                <div className="u-32" />
-                              </div>
-                              <div className="amen-slide_desc w-clearfix">
-                                <div className="red-line" />
-                                <h4
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="h5"
-                                >
-                                  Thoughtfully proportioned pieces, developed
-                                  with skilled Indian artisans for the way you
-                                  live.
-                                </h4>
-                              </div>
-                            </div>
-                            <div className="u-48" />
-                          </div>
-                          <div className="amen-slide_img">
-                            <div data-tab="slide" className="img-w">
-                              <div className="img-w">
-                                <img
-                                  data-parallax="img-in"
-                                  loading="eager"
-                                  alt="Tactile interior details and handcrafted furniture"
-                                  src="/assets/interiors/detail.webp"
-                                  className="img-p"
-                                />
-                              </div>
-                              <div className="img-over-grad from-top" />
-                              <div className="img-over-grad from-bot _4x bot" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        data-reveal-first=""
-                        data-tab-content="spa-gym"
-                        role="listitem"
-                        className="amen-cms_list_item w-dyn-item"
-                      >
-                        <div data-parallax="w" className="amen-slide">
-                          <div className="amen-slide_b">
-                            <div className="grid">
-                              <div className="amen-slide_title">
-                                <h3
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="l1"
-                                >
-                                  Light & mood
-                                </h3>
-                                <div className="u-32" />
-                              </div>
-                              <div className="amen-slide_desc w-clearfix">
-                                <div className="red-line" />
-                                <h4
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="h5"
-                                >
-                                  Layered lighting that follows your day,
-                                  creating moments of warmth, focus and quiet
-                                  throughout the home.
-                                </h4>
-                              </div>
-                            </div>
-                            <div className="u-48" />
-                          </div>
-                          <div className="amen-slide_img">
-                            <div data-tab="slide" className="img-w">
-                              <div className="img-w">
-                                <img
-                                  data-parallax="img-in"
-                                  loading="eager"
-                                  alt="Calm bedroom with layered textiles and warm lighting"
-                                  src="/assets/interiors/bedroom.webp"
-                                  className="img-p"
-                                />
-                              </div>
-                              <div className="img-over-grad from-top" />
-                              <div className="img-over-grad from-bot _4x bot" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        data-reveal-first=""
-                        data-tab-content="landscaping"
-                        role="listitem"
-                        className="amen-cms_list_item w-dyn-item"
-                      >
-                        <div data-parallax="w" className="amen-slide">
-                          <div className="amen-slide_b">
-                            <div className="grid">
-                              <div className="amen-slide_title">
-                                <h3
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="l1"
-                                >
-                                  Finishing touches
-                                </h3>
-                                <div className="u-32" />
-                              </div>
-                              <div className="amen-slide_desc w-clearfix">
-                                <div className="red-line" />
-                                <h4
-                                  data-scroll-reveal="p"
-                                  data-tab="p"
-                                  className="h5"
-                                >
-                                  Art, objects, textiles and greenery. The final
-                                  layer that turns a beautiful interior into a
-                                  home with a point of view.
-                                </h4>
-                              </div>
-                            </div>
-                            <div className="u-48" />
-                          </div>
-                          <div className="amen-slide_img">
-                            <div data-tab="slide" className="img-w">
-                              <div className="img-w">
-                                <img
-                                  data-parallax="img-in"
-                                  loading="eager"
-                                  alt="Quiet lounge with sculptural furniture and a soft material palette"
-                                  src="/assets/interiors/lounge.webp"
-                                  className="img-p"
-                                />
-                              </div>
-                              <div className="img-over-grad from-top" />
-                              <div className="img-over-grad from-bot _4x bot" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                   <div className="amm-s_cms_tabs-w">
@@ -280,76 +77,15 @@ export default function Amenities() {
                             role="list"
                             className="amen-tabs-cms_list w-dyn-items"
                           >
-                            <div
-                              role="listitem"
-                              className="amen-tabs-cms_list_item w-dyn-item"
-                            >
-                              <div
-                                data-tab=""
-                                data-tab-trigger="gated-community"
-                                className="amen-tab"
-                              >
-                                <div data-scroll-reveal="p" className="h5">
-                                  Space planning
+                            {details.map((item) => (
+                              <div key={item.key} role="listitem" className="amen-tabs-cms_list_item w-dyn-item">
+                                <div data-tab="" data-tab-trigger={item.key} className="amen-tab">
+                                  <div data-scroll-reveal="p" className="h5">
+                                    {item.title}
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <div
-                              role="listitem"
-                              className="amen-tabs-cms_list_item w-dyn-item"
-                            >
-                              <div
-                                data-tab=""
-                                data-tab-trigger="swimming-pool-2"
-                                className="amen-tab"
-                              >
-                                <div data-scroll-reveal="p" className="h5">
-                                  Material stories
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              role="listitem"
-                              className="amen-tabs-cms_list_item w-dyn-item"
-                            >
-                              <div
-                                data-tab=""
-                                data-tab-trigger="swimming-pool"
-                                className="amen-tab"
-                              >
-                                <div data-scroll-reveal="p" className="h5">
-                                  Bespoke furniture
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              role="listitem"
-                              className="amen-tabs-cms_list_item w-dyn-item"
-                            >
-                              <div
-                                data-tab=""
-                                data-tab-trigger="spa-gym"
-                                className="amen-tab"
-                              >
-                                <div data-scroll-reveal="p" className="h5">
-                                  Light & mood
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              role="listitem"
-                              className="amen-tabs-cms_list_item w-dyn-item"
-                            >
-                              <div
-                                data-tab=""
-                                data-tab-trigger="landscaping"
-                                className="amen-tab"
-                              >
-                                <div data-scroll-reveal="p" className="h5">
-                                  Finishing touches
-                                </div>
-                              </div>
-                            </div>
+                            ))}
                           </div>
                         </div>
                         <div

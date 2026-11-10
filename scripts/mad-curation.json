@@ -1,0 +1,212 @@
+{
+  "_note": "Human curation layer for collect_instagram.py. Crops are non-destructive (applied to optimised copies only). Boxes are [left, top, right, bottom] in original pixels.",
+  "assets": {
+    "mad-DbEGd80JFW9-00": {
+      "folder": "residential",
+      "project": "living-dining-bar",
+      "category": "residential",
+      "alt": "Living room with a soft ink-wash mural, pale upholstered sofa, striped cushions and a veined stone coffee table",
+      "crops": [
+        {
+          "suffix": "mural",
+          "box": [
+            1100,
+            780,
+            3072,
+            2050
+          ],
+          "folder": "details",
+          "alt": "Ink-wash landscape mural with birds in flight above the sofa",
+          "project": "living-dining-bar"
+        }
+      ]
+    },
+    "mad-DbGTXd8JiZZ-00": {
+      "folder": "residential",
+      "project": "living-dining-bar",
+      "category": "residential",
+      "alt": "Light-filled living room with sheer drapes, an indoor plant, layered cushions and navy armchairs",
+      "crops": [
+        {
+          "suffix": "table",
+          "box": [
+            0,
+            2850,
+            1950,
+            4096
+          ],
+          "folder": "details",
+          "alt": "Veined stone coffee table styled with a smoked-glass vase, books and a brass tray",
+          "project": "living-dining-bar"
+        }
+      ]
+    },
+    "mad-DZc4X9PIFWc-00": {
+      "project": "washroom-vanity",
+      "category": "residential",
+      "crops": [
+        {
+          "suffix": "vanity",
+          "box": [
+            40,
+            370,
+            1500,
+            1560
+          ],
+          "folder": "details",
+          "alt": "Washroom in travertine-clad walls with a dark fluted vanity, vessel basin and black fittings",
+          "project": "washroom-vanity"
+        }
+      ]
+    },
+    "mad-DdTVvujTxs9-00": {
+      "project": "gilded-bedroom",
+      "category": "residential",
+      "crops": [
+        {
+          "suffix": "bedroom",
+          "box": [
+            100,
+            0,
+            3090,
+            2920
+          ],
+          "folder": "hero",
+          "alt": "Bedroom with a sculpted ivory wall relief traced in gold, an upholstered headboard and layered velvet cushions",
+          "project": "gilded-bedroom"
+        },
+        {
+          "suffix": "relief",
+          "box": [
+            100,
+            0,
+            3090,
+            1250
+          ],
+          "folder": "details",
+          "alt": "Sculpted wall relief with flowing ribbons edged in gold",
+          "project": "gilded-bedroom"
+        },
+        {
+          "suffix": "headboard",
+          "box": [
+            700,
+            1560,
+            3090,
+            2920
+          ],
+          "folder": "details",
+          "alt": "Upholstered headboard with velvet, quilted and faux-fur cushions",
+          "project": "gilded-bedroom"
+        }
+      ]
+    },
+    "mad-DdTVTrgzFru-00": {
+      "project": "four-poster-bedroom",
+      "category": "residential",
+      "crops": [
+        {
+          "suffix": "fourposter",
+          "box": [
+            1290,
+            265,
+            3090,
+            2485
+          ],
+          "folder": "residential",
+          "alt": "Bedroom with a clear four-poster frame joined in brass, sheer drapes and timber flooring",
+          "project": "four-poster-bedroom"
+        },
+        {
+          "suffix": "dining",
+          "box": [
+            230,
+            2255,
+            1270,
+            3835
+          ],
+          "folder": "residential",
+          "alt": "Dining area with a black marble table, channel-back chairs and an open-riser staircase",
+          "project": "living-dining-bar"
+        }
+      ]
+    },
+    "mad-DdTVeuiTnjm-00": {
+      "project": "lounge",
+      "category": "residential",
+      "crops": [
+        {
+          "suffix": "bar",
+          "box": [
+            0,
+            0,
+            1455,
+            2185
+          ],
+          "folder": "residential",
+          "alt": "Dining room beneath a linear pendant, with a textured mirrored niche and round mirror beyond",
+          "project": "living-dining-bar"
+        },
+        {
+          "suffix": "living",
+          "box": [
+            1515,
+            0,
+            3090,
+            2185
+          ],
+          "folder": "residential",
+          "alt": "Lounge with a cream sectional, stone coffee tables, sculptural wall art and full-height drapes",
+          "project": "lounge"
+        }
+      ]
+    },
+    "mad-DdTVjZYzpDC-00": {
+      "project": "washroom-vanity",
+      "category": "residential",
+      "crops": [
+        {
+          "suffix": "corner",
+          "box": [
+            0,
+            230,
+            1840,
+            3490
+          ],
+          "folder": "details",
+          "alt": "Reading corner with a navy armchair, houndstooth throw, chrome sculpture and layered blue artwork",
+          "project": "living-dining-bar"
+        },
+        {
+          "suffix": "vanity",
+          "box": [
+            1960,
+            230,
+            2855,
+            1500
+          ],
+          "folder": "details",
+          "alt": "Powder vanity in black with a vessel basin, backlit mirror and stone-clad walls",
+          "project": "washroom-vanity"
+        }
+      ]
+    },
+    "mad-DdTVu4Ak5xq-00": {
+      "folder": "portraits",
+      "role": "press",
+      "alt": "Cover of Sylph Creatives, The Residence Issue, featuring Naitik Parekh of M.A.D Collaborative"
+    },
+    "mad-DdHWUl2TNsn-00": {
+      "folder": "portraits",
+      "role": "portrait",
+      "alt": "Naitik Parekh, Principal Architect of M.A.D Collaboratives"
+    }
+  },
+  "projects": {},
+  "exclude": {
+    "Dc3rFM1zMrn": "Personal: event photo with family",
+    "Dcq9MpGTV8E": "Personal: social photo",
+    "Ddo0r58Kpxf": "Personal: family video with children",
+    "DfAF9iousm3": "Personal: birthday video"
+  }
+}

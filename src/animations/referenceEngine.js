@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { CustomEase } from "gsap/CustomEase";
 import Lenis from "lenis";
-import lottie from "lottie-web/build/player/lottie_light";
 import Swiper from "swiper/bundle";
 
 export function createSiteExperience({ initialLoad = true } = {}) {
@@ -57,7 +56,6 @@ export function createSiteExperience({ initialLoad = true } = {}) {
     });
     return instance;
   };
-  const loadLottie = (options) => trackInstance(lottie.loadAnimation(options));
   function initPreloader() {
     if (!initialLoad || reducedMotion) {
       hideElement(document.querySelector("[data-preloader]"));
@@ -345,7 +343,6 @@ export function createSiteExperience({ initialLoad = true } = {}) {
       initPins(),
       initLogo(),
       initScrollBar(),
-      initTFTLjson(),
       initCardParts(),
       initAccordion(),
       initSlider(),
@@ -536,7 +533,7 @@ export function createSiteExperience({ initialLoad = true } = {}) {
   }
   function initUtmFields() {
     const e = document.querySelector('input[name="title"]');
-    e && (e.value = "Deal from Era");
+    e && (e.value = "Website enquiry");
     const t = new URLSearchParams(window.location.search),
       r = {
         utm_source: t.get("utm_source") || "",
@@ -1776,50 +1773,6 @@ export function createSiteExperience({ initialLoad = true } = {}) {
         }),
         listen(t, "pointerup", () => {
           ((a = !1), (document.body.style.cursor = "grab"));
-        }));
-    });
-  }
-  function initTFTLjson() {
-    document.querySelectorAll(".credits").forEach((e) => {
-      const t = e.querySelector(".credits_logo");
-      if (!t) return;
-      const r = loadLottie({
-        container: t,
-        renderer: "svg",
-        loop: !1,
-        autoplay: !1,
-        path: t.getAttribute("data-json"),
-      });
-      r.goToAndStop(0, !0);
-      const a = 99,
-        o = gsap.timeline({
-          paused: !0,
-        });
-      (o.to(
-        {
-          p: 0,
-        },
-        {
-          p: 1,
-          duration: 1,
-          ease: "none",
-          onUpdate: function () {
-            const e = Math.round(this.targets()[0].p * (a - 1));
-            r.goToAndStop(e, !0);
-          },
-        },
-      ),
-        listen(e, "mouseenter", () => {
-          gsap.to(o, {
-            progress: 0.5,
-            duration: 1,
-          });
-        }),
-        listen(e, "mouseleave", () => {
-          gsap.to(o, {
-            progress: 1,
-            duration: 1,
-          });
         }));
     });
   }

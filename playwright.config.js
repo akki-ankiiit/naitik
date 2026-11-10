@@ -10,6 +10,8 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:4178",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
+    // Set PW_CHANNEL=chrome to use the system browser instead of Playwright's download.
+    ...(process.env.PW_CHANNEL && { channel: process.env.PW_CHANNEL }),
   },
   webServer: {
     command: "npm run dev -- --port 4178 --strictPort",
@@ -22,11 +24,16 @@ export default defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         viewport: { width: 1440, height: 1000 },
+        ...(process.env.PW_CHANNEL && { channel: process.env.PW_CHANNEL }),
       },
     },
     {
       name: "mobile",
-      use: { ...devices["iPhone 13"], defaultBrowserType: "chromium" },
+      use: {
+        ...devices["iPhone 13"],
+        defaultBrowserType: "chromium",
+        ...(process.env.PW_CHANNEL && { channel: process.env.PW_CHANNEL }),
+      },
     },
   ],
 });

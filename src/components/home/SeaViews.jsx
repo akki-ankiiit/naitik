@@ -1,5 +1,7 @@
-/** Migrated reference markup. Interactions are managed by useSiteExperience. */
-export default function SeaViews() {
+import { imgProps } from "../../data/media";
+
+/** Closing enquiry CTA. Interactions are managed by useSiteExperience. */
+export default function SeaViews({ image = "DdTVeuiTnjm-00-living" }) {
   return (
     <section data-bg="color" className="section theme_on-color">
       <div data-footer-clip="" className="container">
@@ -9,9 +11,9 @@ export default function SeaViews() {
             <div className="grid">
               <div className="cta-s_desc">
                 <p data-scroll-reveal="p" className="l1 a-center">
-                  Every meaningful space begins with a conversation. Tell us
-                  about the home you imagine, the way you live, and what matters
-                  most to you.
+                  Every residence begins with its own circumstances: its
+                  context, its architecture and the people who will live in it.
+                  Tell us about yours.
                 </p>
               </div>
             </div>
@@ -19,17 +21,18 @@ export default function SeaViews() {
             <div className="grid">
               <div className="cta-s_title">
                 <h2 data-scroll-reveal="h" className="h1 a-center">
-                  A home
+                  Have a space
                   <br />
-                  with soul
+                  in mind?
                 </h2>
                 <div className="u-32" />
                 <h3 data-scroll-reveal="h" className="c1 a-center">
-                  Thoughtfully yours
+                  Let’s create something meaningful
                 </h3>
                 <div className="u-160" />
                 <div data-scroll-reveal="ctn" className="cta-s_title_btn">
                   <div
+                    data-modal-cta-btn="book-a-call"
                     hover-btn-circle=""
                     data-magnetic-btn=""
                     hover-nav-item-trigger=""
@@ -38,19 +41,19 @@ export default function SeaViews() {
                     <div data-magnetic-inner="" className="btn-circle_label">
                       <a
                         hover-nav-item=""
-                        aria-label="Explore our projects"
-                        href="/projects"
+                        aria-label="Start a project"
+                        href="#"
                         className="nav-item w-inline-block"
                       >
                         <div className="nav-item_label">
                           <div className="nav-item_label_text">
                             <div hover="text" className="l1">
-                              Explore our projects
+                              Start a project
                             </div>
                           </div>
                           <div className="nav-item_label_text is-2">
                             <div hover="text" className="l1">
-                              Explore our projects
+                              Start a project
                             </div>
                           </div>
                         </div>
@@ -95,8 +98,8 @@ export default function SeaViews() {
                       </svg>
                     </div>
                     <a
-                      aria-label="Explore our projects"
-                      href="/projects"
+                      aria-label="Start a project"
+                      href="#"
                       className="btn-circle_link w-inline-block"
                     />
                   </div>
@@ -108,9 +111,8 @@ export default function SeaViews() {
             <div data-parallax="w" className="img-w">
               <img
                 data-parallax="img"
-                loading="eager"
-                alt="Warm, light-filled living room with natural materials and sculptural furniture"
-                src="/assets/interiors/hero.webp"
+                {...imgProps(image)}
+                loading="lazy"
                 className="img-p"
               />
               <div className="img-over-grad from-top _4x" />
