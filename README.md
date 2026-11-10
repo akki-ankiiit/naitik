@@ -1,94 +1,41 @@
-# ERA Residence — React
+# M.A.D. Collaboratives — studio website
 
-A React recreation of [example.com](https://www.example.com/), preserving the reference site's layouts, typography, imagery, responsive breakpoints, and animation choreography.
+Portfolio website for **M.A.D. Collaboratives** (Make A Difference), the boutique design studio led by Principal Architect **Naitik Parekh**. Built with React 19 and Vite, with GSAP/ScrollTrigger and Lenis motion, sliders, lightbox and page transitions. Identity, content and photography belong to the studio.
 
 ## Run locally
 
 ```bash
 npm install
-npm run dev
+npm run dev        # Vite dev server
+npm run build      # production output in dist/
+npm run preview    # preview the production build
+PW_CHANNEL=chrome npm test   # Playwright, desktop + mobile (or run `npx playwright install chromium` and drop PW_CHANNEL)
 ```
 
-Open the local address printed by Vite. Node.js 22.12+ is recommended.
+## Pages
+| Route | Content |
+|---|---|
+| `/` | Hero, studio statement, philosophy slider, Naitik's quote, studio introduction, featured work, Sylph quote, selected details, Naitik profile, Instagram selection, enquiry CTA |
+| `/projects` | Five published spaces plus an index of the studio's Instagram highlight projects |
+| `/projects/:slug` | Split detail view: verified metadata, source captions, credits, gallery with lightbox, related spaces |
+| `/about` | Studio, Naitik Parekh, approach (attributed quotes), recognition |
+| `/contact` | Instagram channels, city, enquiry modal |
+| `/privacy`, `/terms` | Draft wording pending the studio's review |
 
-```bash
-npm run build      # Production output in dist/
-npm run preview    # Preview the production build
-npm test           # Desktop and mobile browser checks
-npm run format     # Format source files
-```
-
-For a fresh browser-testing environment, run `npx playwright install chromium` first.
-
-## Included
-
-- The complete homepage, apartment listing, contact page, and 25 individual apartment pages.
-- The opening arch reveal, animated typography, smooth scrolling, image parallax, horizontal scroll sequences, architecture masks, and footer reveal.
-- Day/night hero transitions, architectural hotspots, sliders, amenity tabs, and apartment-image lightboxes.
-- Apartment filters, sorting, query-string deep links, and reset controls.
-- Animated mobile navigation, booking modal, cookie-choice persistence, and client-side page transitions.
-- Route-level lazy loading and cleanup of animation listeners, timers, observers, and scroll instances between pages.
-- Reduced-motion handling for the opening sequence, text transitions, and smooth scrolling.
-
-## Project structure
-
-```text
-public/
-  assets/
-    animations/             Local Lottie animation
-    fonts/                  Maison Neue font files
-    images/                 Reference photography, plans, and illustrations
-  favicon.svg
-  _redirects                SPA fallback for compatible static hosts
-src/
-  animations/
-    referenceEngine.js      Original choreography adapted to React's lifecycle
-  components/
-    home/                   Homepage sections
-    layout/                 Preloader, cookies, footer, and shared modals
-    apartmentspage/         Apartment listing and its layout components
-    apartments/details/     Apartment content, floor plans, and related residences
-    contactpage/            Contact-page content
-  data/
-    routes.js               Lazy-loaded route registry and page titles
-    asset-manifest.json     Source-to-local asset mapping
-  hooks/
-    useSiteExperience.js    Font readiness and animation lifecycle
-    useContactForm.js       Enquiry submission and status handling
-  pages/                    Page compositions
-  styles/
-    reference.css           Reference layout, fonts, colors, and breakpoints
-    interactions.css        Hover effects, masks, and animation styles
-    app.css                 React integration and accessibility styles
-  App.jsx                   Routing and animated navigation
-  main.jsx                  React entry point
-scripts/
-  sync-assets.mjs           Restore missing local assets
-tests/
-  site.spec.js              Desktop and mobile interaction tests
-```
-
-The markup is editable JSX, rendered by React. The animation engine runs locally using npm packages; it does not load Webflow, Barba, or the original hosted JavaScript.
+## Content and assets
+- Verified brand facts: `src/data/studio.js`. Projects: `src/data/projects.js`. Research: `docs/research/`.
+- Photography is collected and processed by `scripts/collect_instagram.py` (`collect`, `process`, `sheets`). Curation, crops and personal-post exclusions live in `scripts/mad-curation.json`. Outputs are `public/assets/mad/manifest/assets.json` (full manifest) and `src/data/mad-media.json` (site index).
+- `docs/research/asset-report.md` lists usage-approval status and the media still missing.
 
 ## Enquiry form
-
-The original production form service is not connected to this recreation. To enable submissions:
+No backend is connected. Without one, the form says so before submission and sends nothing. To connect it:
 
 1. Copy `.env.example` to `.env.local`.
-2. Set `VITE_CONTACT_ENDPOINT` to your enquiry API URL.
-3. Restart Vite or rebuild the deployment.
+2. Set `VITE_CONTACT_ENDPOINT` to an API that accepts a JSON `POST` with `name`, `email`, `phone`, `project_type`, `project_location`, `budget`, `message` and attribution fields.
+3. Rebuild.
 
-The endpoint receives a JSON `POST` with `name`, `email`, `phone`, `message`, and the form's attribution fields. A successful HTTP response displays the confirmation; failed requests display an error. When no endpoint is configured, the form provides the sales-office phone number instead of claiming a message was sent.
+## Deployment
+Deploy `dist/` to a static host with SPA fallback to `index.html` (`public/_redirects` covers Netlify, `vercel.json` covers Vercel). The display serif loads from Adobe Fonts kit `pig8glj`, which is domain-locked. Add the production domain to the kit, or the headings fall back. Canonical URLs and structured data are waiting for a confirmed domain.
 
-## Assets and deployment
-
-Images, floor plans, Maison Neue fonts, and the footer animation are hosted locally. The Adobe display/script font kit and transparent flower videos still use the reference site's public hosting. Legal documents and map/social links retain their original destinations. Apartment content is a static snapshot of the reference, not a live inventory feed.
-
-Deploy `dist/` to a static host with all application routes rewritten to `index.html`. A Netlify-compatible `_redirects` file is included. Equivalent SPA fallback configuration is required on other hosts for direct URLs such as `/apartments/011`.
-
-Use `npm run assets:sync` to restore missing local assets without overwriting existing files.
-
-## Verification
-
-Browser checks cover homepage rendering and scrolling, day/night switching, filtered apartment deep links, filter reset, detail navigation, browser back, mobile menu navigation, booking forms, and reduced-motion loading. The day/night test is intentionally desktop-only because the reference hides that control on mobile.
-# ankitchandrakar
+Motion and layout hooks live in `src/animations/referenceEngine.js` and are driven by `data-*` attributes. Shared site chrome is in `src/components/layout/`.
+# naitik
